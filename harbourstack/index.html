@@ -12,16 +12,9 @@
       --text-muted: #666;
       --bg: #ffffff;
       --bg-soft: #f7f7f5;
-      --bg-note: #f0f4ff;
       --border: #e2e2e2;
       --accent: #2563eb;
-      --accent-dark: #1d4ed8;
-      --warn: #b45309;
-      --warn-bg: #fffbeb;
-      --good: #15803d;
-      --good-bg: #f0fdf4;
       --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-      --mono: 'SF Mono', 'Fira Code', 'Consolas', monospace;
     }
 
     html { font-size: 17px; }
@@ -34,7 +27,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Layout ── */
     .page-header {
       background: var(--bg-soft);
       border-bottom: 1px solid var(--border);
@@ -67,10 +59,7 @@
       padding: 2.5rem 1.5rem 5rem;
     }
 
-    /* ── Sections ── */
-    .section {
-      margin-bottom: 3rem;
-    }
+    .section { margin-bottom: 3rem; }
     .section + .section {
       padding-top: 1rem;
       border-top: 1px solid var(--border);
@@ -85,19 +74,12 @@
       margin-bottom: 1rem;
     }
 
-    /* ── Typography ── */
     h2 {
       font-size: clamp(1.2rem, 3vw, 1.5rem);
       font-weight: 700;
       letter-spacing: -0.015em;
       margin-bottom: 0.75rem;
       line-height: 1.25;
-    }
-    h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
     }
 
     p {
@@ -113,71 +95,7 @@
       margin-bottom: 0.9rem;
     }
     li { margin-bottom: 0.25rem; }
-    li > ul { margin-top: 0.25rem; margin-bottom: 0; }
 
-    /* ── Tables ── */
-    .table-wrap {
-      overflow-x: auto;
-      margin: 1.25rem 0;
-      border-radius: 6px;
-      border: 1px solid var(--border);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.9rem;
-    }
-    th {
-      background: var(--bg-soft);
-      font-weight: 600;
-      text-align: left;
-      padding: 0.6rem 0.9rem;
-      border-bottom: 1px solid var(--border);
-      white-space: nowrap;
-    }
-    td {
-      padding: 0.55rem 0.9rem;
-      vertical-align: top;
-      border-bottom: 1px solid var(--border);
-    }
-    tr:last-child td { border-bottom: none; }
-    tr:nth-child(even) td { background: var(--bg-soft); }
-    .stage { font-weight: 600; font-variant-numeric: tabular-nums; }
-
-    /* ── Callout boxes ── */
-    .callout {
-      border-radius: 6px;
-      padding: 1rem 1.2rem;
-      margin: 1.25rem 0;
-      font-size: 0.95rem;
-    }
-    .callout-warn {
-      background: var(--warn-bg);
-      border-left: 3px solid var(--warn);
-      color: #78350f;
-    }
-    .callout-good {
-      background: var(--good-bg);
-      border-left: 3px solid var(--good);
-      color: #14532d;
-    }
-    .callout-info {
-      background: var(--bg-note);
-      border-left: 3px solid var(--accent);
-      color: #1e3a8a;
-    }
-    .callout p { margin-bottom: 0.4rem; }
-    .callout p:last-child { margin-bottom: 0; }
-    .callout-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 0.4rem;
-      opacity: 0.75;
-    }
-
-    /* ── Prompt box ── */
     .prompt {
       background: var(--bg-soft);
       border: 1px solid var(--border);
@@ -200,106 +118,6 @@
       margin: 0;
     }
 
-    /* ── Result stat grid ── */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 0.75rem;
-      margin: 1.25rem 0;
-    }
-    .stat {
-      background: var(--bg-soft);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 0.8rem 1rem;
-    }
-    .stat .stat-value {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--accent-dark);
-      line-height: 1.2;
-    }
-    .stat .stat-label {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-top: 0.15rem;
-    }
-
-    /* ── Two-column layout ── */
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin: 1.25rem 0;
-    }
-    .col-box {
-      border-radius: 6px;
-      padding: 1rem 1.1rem;
-    }
-    .col-box.bad {
-      background: var(--warn-bg);
-      border: 1px solid #fde68a;
-    }
-    .col-box.good {
-      background: var(--good-bg);
-      border: 1px solid #bbf7d0;
-    }
-    .col-box h4 {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      margin-bottom: 0.6rem;
-      color: var(--text-muted);
-    }
-    .col-box.bad h4 { color: var(--warn); }
-    .col-box.good h4 { color: var(--good); }
-    .col-box ul { padding-left: 1.1rem; margin: 0; }
-    .col-box li { font-size: 0.9rem; margin-bottom: 0.2rem; }
-
-    /* ── Facilitator badge ── */
-    .facilitator-badge {
-      display: inline-block;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      background: #7c3aed;
-      color: white;
-      border-radius: 3px;
-      padding: 0.15em 0.45em;
-      vertical-align: middle;
-      margin-left: 0.4rem;
-    }
-
-    .facilitator-section {
-      background: #faf5ff;
-      border: 1px solid #e9d5ff;
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin-top: 2rem;
-    }
-    .facilitator-section h2 .facilitator-badge { background: #7c3aed; }
-
-    /* ── Discussion questions ── */
-    .question-list { list-style: none; padding: 0; }
-    .question-list li {
-      padding: 0.7rem 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.95rem;
-      counter-increment: q;
-    }
-    .question-list li:first-child { padding-top: 0; }
-    .question-list li:last-child { border-bottom: none; padding-bottom: 0; }
-    .question-list li::before {
-      content: counter(q) ".";
-      font-weight: 700;
-      color: var(--accent);
-      margin-right: 0.5rem;
-    }
-    .question-list { counter-reset: q; }
-
-    /* ── Footer ── */
     footer {
       border-top: 1px solid var(--border);
       padding: 1.5rem;
@@ -308,16 +126,10 @@
       color: var(--text-muted);
     }
 
-    /* ── Mobile ── */
     @media (max-width: 600px) {
       html { font-size: 16px; }
       .page-header { padding: 1.75rem 1.25rem 1.5rem; }
       main { padding: 2rem 1.25rem 4rem; }
-      .two-col { grid-template-columns: 1fr; }
-      .stats { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 400px) {
-      .stats { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -331,7 +143,6 @@
 
 <main>
 
-  <!-- ── SCENARIO ── -->
   <section class="section">
     <div class="section-label">Background</div>
     <h2>Scenario</h2>
@@ -354,7 +165,6 @@
     <p>But growth did not accelerate the way the board expected.</p>
   </section>
 
-  <!-- ── SYMPTOMS ── -->
   <section class="section">
     <div class="section-label">Symptoms</div>
     <h2>What the team is seeing</h2>
@@ -372,7 +182,6 @@
     </ul>
   </section>
 
-  <!-- ── DEBATE ── -->
   <section class="section">
     <div class="section-label">Leadership Debate</div>
     <h2>What leadership wants to do</h2>
@@ -383,7 +192,6 @@
     <p>The <strong>founder</strong> is unsure. They can feel something is off, but the dashboards make it look like the team is doing the right things.</p>
   </section>
 
-  <!-- ── EXERCISE ── -->
   <section class="section">
     <div class="section-label">Exercise</div>
     <h2>Your task</h2>
@@ -402,228 +210,6 @@
       <div class="prompt-label">Discussion prompt</div>
       <p>What should HarbourStack fix before adding more sales capacity?</p>
     </div>
-  </section>
-
-  <!-- ── FACILITATOR NOTES ── -->
-  <section class="section">
-    <h2>Facilitator Notes <span class="facilitator-badge">Facilitator</span></h2>
-
-    <div class="facilitator-section">
-
-      <h3>Likely Maturity Assessment</h3>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr><th>Dimension</th><th>Stage</th><th>Rationale</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Market Fit</strong></td>
-              <td><span class="stage">2 &mdash; Emerging</span></td>
-              <td>Strong-fit customers exist, but ICP is still too loose. The pattern is visible but not named or operationalized.</td>
-            </tr>
-            <tr>
-              <td><strong>Sales Process</strong></td>
-              <td><span class="stage">3 &mdash; Structured</span></td>
-              <td>CRM stages, pipeline reviews, dashboards, and sales leadership are in place. The process exists, even if it is not solving the right problem.</td>
-            </tr>
-            <tr>
-              <td><strong>Enablement</strong></td>
-              <td><span class="stage">1 &mdash; Ad Hoc</span></td>
-              <td>New reps cannot carry the founder's story, qualify deeply, or move deals without founder involvement. Knowledge still lives inside the founder.</td>
-            </tr>
-            <tr>
-              <td><strong>Technology</strong></td>
-              <td><span class="stage">3 &mdash; Structured</span></td>
-              <td>CRM, dashboards, call recording, and reporting are in place. Tooling is not the main bottleneck.</td>
-            </tr>
-            <tr>
-              <td><strong>Retention &amp; Expansion</strong></td>
-              <td><span class="stage">2 &mdash; Emerging</span></td>
-              <td>Some CS motion exists, but expectations are unclear, expansion is weak, and churn is rising. The lifecycle is not managed intentionally.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>Core Diagnosis</h3>
-
-      <div class="callout callout-warn">
-        <div class="callout-label">Trap answer</div>
-        <p>They need better sales execution.</p>
-      </div>
-
-      <div class="callout callout-good">
-        <div class="callout-label">Better answer</div>
-        <p>They scaled the sales motion before systematizing founder knowledge and tightening the ICP.</p>
-      </div>
-
-      <p>The secondary issue is Retention &amp; Expansion. They are closing customers who should not have been sold in the first place, then handing those customers to CS with fuzzy expectations &mdash; creating churn, weak expansion, and poor feedback loops.</p>
-
-      <div class="callout callout-info">
-        <div class="callout-label">The bottleneck</div>
-        <p><strong>Enablement + Market Fit</strong>, with Retention &amp; Expansion showing the downstream damage.</p>
-      </div>
-
-      <h3>The Imbalance</h3>
-      <p>HarbourStack has:</p>
-      <ul>
-        <li>Enough <strong>process</strong> to create activity</li>
-        <li>Enough <strong>technology</strong> to measure the activity</li>
-        <li>Not enough <strong>ICP clarity</strong> to focus the team</li>
-        <li>Not enough <strong>enablement</strong> to make reps effective</li>
-        <li>Not enough <strong>retention discipline</strong> to make growth compound</li>
-      </ul>
-      <p>The company has built sales infrastructure, but not yet a real revenue engine.</p>
-
-    </div>
-  </section>
-
-  <!-- ── WHAT HAPPENED ── -->
-  <section class="section">
-    <div class="section-label">What Happened Next</div>
-    <h2>Act 1: They misdiagnosed the problem</h2>
-
-    <p>HarbourStack initially followed the board's instinct. They hired two more AEs, increased paid spend by 60%, and bought a better outbound platform.</p>
-
-    <p>For a quarter, the numbers looked better &mdash; more meetings, more demos, more pipeline, more CRM activity. But the underlying problem got worse.</p>
-
-    <p>After two quarters:</p>
-    <ul>
-      <li>CAC increased by <strong>42%</strong></li>
-      <li>Net new ARR barely moved</li>
-      <li>Sales cycles stayed above <strong>90 days</strong></li>
-      <li>Discounting increased again</li>
-      <li>Two AEs missed quota and left</li>
-      <li>Customer Success became overloaded</li>
-      <li>Gross revenue churn rose to <strong>19%</strong></li>
-      <li>NRR dropped below <strong>90%</strong></li>
-    </ul>
-
-    <div class="callout callout-warn">
-      <div class="callout-label">Painful lesson</div>
-      <p>They added fuel to a leaky engine.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>Act 2: They pivoted to the real fix</h2>
-
-    <p>HarbourStack paused hiring and cut paid spend back to its previous level. Then they spent one quarter on three fixes.</p>
-
-    <h3>1. They narrowed the ICP</h3>
-    <p>After analyzing wins, churn, implementation time, expansion, support load, and sales cycle length, they discovered their best customers were not simply "mid-sized logistics companies."</p>
-
-    <div class="callout callout-info">
-      <div class="callout-label">Real ICP</div>
-      <p>Regional field service companies with 75 to 300 employees, multiple branches, high compliance burden, and a dispatch team still operating partly in spreadsheets.</p>
-    </div>
-
-    <h3>2. They turned founder knowledge into enablement</h3>
-    <p>They built a practical sales curriculum:</p>
-    <ul>
-      <li>Discovery questions by persona</li>
-      <li>Good-fit / bad-fit qualification guide</li>
-      <li>Demo paths by use case</li>
-      <li>Objection handling</li>
-      <li>Pricing and discounting guardrails</li>
-      <li>Implementation expectation checklist</li>
-      <li>Three annotated founder-led sales calls</li>
-    </ul>
-    <p>The founder still helped on strategic deals, but was no longer the only person who could make the story land.</p>
-
-    <h3>3. They repaired the Sales-to-CS handoff</h3>
-    <p>Sales and CS created a shared definition of a <strong>clean sale</strong>. No deal could close without:</p>
-    <ul>
-      <li>Confirmed business outcome</li>
-      <li>Named executive sponsor</li>
-      <li>Implementation owner</li>
-      <li>First success milestone</li>
-      <li>Known risks</li>
-      <li>Expansion hypothesis</li>
-    </ul>
-  </section>
-
-  <section class="section">
-    <h2>Results after 9 months</h2>
-
-    <div class="stats">
-      <div class="stat">
-        <div class="stat-value">91 &rarr; 63 days</div>
-        <div class="stat-label">Sales cycle length</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">18% &rarr; 31%</div>
-        <div class="stat-label">Win rate (narrowed ICP)</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">19% &rarr; 10%</div>
-        <div class="stat-label">Gross revenue churn</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">6% &rarr; 18%</div>
-        <div class="stat-label">Expansion as % of new ARR</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">7mo &rarr; 4mo</div>
-        <div class="stat-label">AE ramp time</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">&lt;20%</div>
-        <div class="stat-label">Late-stage deals needing founder</div>
-      </div>
-    </div>
-
-    <div class="callout callout-good">
-      <div class="callout-label">Reveal</div>
-      <p>HarbourStack did not have a sales capacity problem. It had a revenue engine imbalance.</p>
-      <p style="margin-top:0.5rem;">They had enough process to create activity, enough technology to measure it, but not enough ICP clarity or enablement to make the activity productive.</p>
-    </div>
-  </section>
-
-  <!-- ── SLIDE PAIRING ── -->
-  <section class="section">
-    <div class="section-label">Slide Pairing</div>
-    <h2>Misdiagnosis vs. real fix</h2>
-
-    <div class="two-col">
-      <div class="col-box bad">
-        <h4>Misdiagnosis</h4>
-        <ul>
-          <li>Hired more AEs</li>
-          <li>Increased paid spend</li>
-          <li>Bought better outbound tools</li>
-          <li>CAC rose</li>
-          <li>Churn rose</li>
-          <li>NRR fell</li>
-        </ul>
-      </div>
-      <div class="col-box good">
-        <h4>Real Fix</h4>
-        <ul>
-          <li>Narrowed ICP</li>
-          <li>Captured founder knowledge</li>
-          <li>Rebuilt Sales-to-CS handoff</li>
-          <li>Sales cycle fell</li>
-          <li>Win rate improved</li>
-          <li>Churn declined</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── DISCUSSION ── -->
-  <section class="section">
-    <div class="section-label">Discussion</div>
-    <h2>Questions</h2>
-
-    <ol class="question-list">
-      <li>What evidence pointed to Market Fit as a constraint?</li>
-      <li>What evidence pointed to Enablement as the primary constraint?</li>
-      <li>Why did the new tools and dashboards make the problem harder to see?</li>
-      <li>What would have happened if HarbourStack hired more reps before fixing the system?</li>
-      <li>Which of these symptoms have you seen in your own company or portfolio?</li>
-    </ol>
   </section>
 
 </main>
