@@ -91,8 +91,10 @@
 
     footer a:hover { color: #111; }
 
-    /* Mobile: iframe is unreliable — swap to a big download button instead */
-    @media (max-width: 767px) {
+    /* Tablet + mobile: iframe is unreliable on iOS/Android — swap to a big download button.
+       767px covers phones; extending to 1024px catches iPads in portrait where iOS Safari
+       often fails to render inline PDFs. */
+    @media (max-width: 1024px) {
       .container { padding: 20px 16px; }
 
       header {
@@ -135,23 +137,32 @@
         <h1>Revenue Growth Engine Maturity Framework</h1>
       </div>
       <a href="revenue-growth-engine-maturity-framework.pdf"
-         download
+         download="revenue-growth-engine-maturity-framework.pdf"
          class="download-btn desktop-download">
         ↓ Download PDF
       </a>
     </header>
 
-    <!-- Desktop: inline viewer via browser's native PDF renderer -->
+    <!-- Desktop: inline viewer via browser's native PDF renderer.
+         Fallback content inside the tags is shown when the browser can't render it inline. -->
     <iframe
       class="pdf-viewer"
       src="revenue-growth-engine-maturity-framework.pdf"
+      type="application/pdf"
       title="Revenue Growth Engine Maturity Framework"
-    ></iframe>
+    >
+      <p style="padding:24px;color:#6b7280;font-size:14px;">
+        Your browser can't display this PDF inline.
+        <a href="revenue-growth-engine-maturity-framework.pdf"
+           download="revenue-growth-engine-maturity-framework.pdf"
+           style="color:#111;font-weight:500;">Download the PDF</a> instead.
+      </p>
+    </iframe>
 
     <!-- Mobile: inline PDF viewers are unreliable on iOS/Android — offer download instead -->
     <div class="mobile-download">
       <a href="revenue-growth-engine-maturity-framework.pdf"
-         download
+         download="revenue-growth-engine-maturity-framework.pdf"
          class="download-btn">
         ↓ Download PDF
       </a>
